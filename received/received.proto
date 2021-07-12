@@ -1,0 +1,25 @@
+syntax = "proto3";
+package payment_manager;
+
+import "google/api/annotations.proto";
+
+message Request{
+    string email = 1;
+    string name = 2;
+}
+
+message Response{
+    Meta meta = 1;
+    Request data = 2;
+}
+
+message Meta {
+    int32 code = 1;
+    string message = 2;
+    string error = 3;
+}
+
+
+service ReceivedManagerService{
+    rpc ReceiveRequest(Request) returns (Response);
+}
