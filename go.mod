@@ -1,4 +1,4 @@
-module github.com/pub-protoc
+module github.com/widimustopo/pub-protoc
 
 go 1.15
 
