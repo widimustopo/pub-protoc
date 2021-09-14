@@ -1,0 +1,28 @@
+syntax = "proto3";
+package user;
+
+
+message Member {
+  string MemberID   = 1;
+  string MemberName = 2;
+  string Username   = 3;
+  string Password   = 4;
+  string Status     = 5;
+}
+
+message Response{
+    Meta meta = 1;
+    Member data = 2;
+}
+
+message Meta {
+    int32 code     = 1;
+    string message = 2;
+    string error   = 3;
+}
+
+service Users {
+  rpc Register (Member) returns (Response) {}
+  rpc UpdateStatus (Member) returns (Response) {}
+}
+
